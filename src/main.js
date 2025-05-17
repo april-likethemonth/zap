@@ -1,4 +1,4 @@
-import badWords from "./badwords.json";
+import badWords from "./badwords.json" assert { type: "json" };
 
 window.addEventListener("DOMContentLoaded", () => {
   const recordingButton = document.getElementById("recording-button");
