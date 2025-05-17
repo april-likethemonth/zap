@@ -11,8 +11,5 @@
   "devDependencies": {
     "vite": "^6.3.5"
   },
-  "dependencies": {
-    "98.css": "^0.1.21",
-    "bad-words": "^4.0.0"
-  }
+  "dependencies": {}
 }
