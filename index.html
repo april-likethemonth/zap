@@ -3,37 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Speech API example</title>
+    <title>zap!</title>
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
-
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <h1>Web Speech API example</h1>
-    <p>Click the button and start speaking</p>
-    <button id="recording-button">Start recording</button>
-    <div class="window-body">
-      <p>Hello, world!</p>
-
-      <menu role="tablist">
-        <li role="tab" aria-selected="true"><a href="#tabs">Desktop</a></li>
-        <li role="tab"><a href="#tabs">My computer</a></li>
-        <li role="tab"><a href="#tabs">Control panel</a></li>
-        <li role="tab"><a href="#tabs">Devices manager</a></li>
-        <li role="tab"><a href="#tabs">Hardware profiles</a></li>
-        <li role="tab"><a href="#tabs">Performance</a></li>
-      </menu>
-      <div class="window" role="tabpanel">
-        <div class="window-body">
-          <div id="transcription-final"></div>
-          <div id="transcription-interim"></div>
+    <div class="window" id="main-window" style="height: calc(100vh - 22px)">
+      <div class="title-bar">
+        <div class="title-bar-text">zap!</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body" id="main-window-body">
+        <menu role="tablist">
+          <li role="tab" aria-selected="true"><a href="#tabs">Home</a></li>
+          <li role="tab"><a href="/setting">Settings</a></li>
+        </menu>
+        <div class="window" role="tabpanel">
+          <div class="window-body" id="Home">
+            <div id="transcription-final"></div>
+            <div id="chatbox">
+              <input id="chatbox-text" type="text" />
+              <button id="recording-button">Start recording</button>
+            </div>
+          </div>
+          <div role="tabpanel" aria-hidden="true" id="Settings">
+            <p>meow</p>
+          </div>
         </div>
       </div>
     </div>
-    <p id="error-message" hidden aria-hidden="true">
-      your browser isnt supported :cc i know google is evil and bad but try
-      chrome
-    </p>
+    <div
+      id="browser-error"
+      class="window"
+      style="width: 300px"
+      hidden
+      aria-hidden="true"
+    >
+      <div class="title-bar">
+        <div class="title-bar-text">Error</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="error-window-body">
+        <img src="./src/error.png" alt="Error" />
+        <p>
+          your browser isnt supported :cc i know google is evil and bad but try
+          chrome
+        </p>
+      </div>
+    </div>
+    <div id="browser-error-overlay" hidden></div>
     <script src="./src/main.js"></script>
   </body>
 </html>

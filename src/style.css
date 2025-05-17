@@ -1,35 +1,63 @@
-html,
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
 #transcription-final,
-#transcription-interim {
-  font-size: 15px;
+#chatbox {
+  font-size: 11px;
   color: #5e5e5e;
   max-height: 400px;
-  overflow-y: scroll;
   text-align: left;
 }
-#transcription-final .final {
+#transcription-final p {
+  margin: 1px;
+}
+#transcription-final {
   color: #000;
+  overflow-y: scroll;
 }
-#error-message {
-  color: #ff0000;
+
+/* Overlay to gray out everything */
+#browser-error-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(100, 100, 100, 0.6);
+  z-index: 9998;
 }
-button {
-  font-size: 20px;
-  font-weight: 200;
-  color: #fff;
-  background: #2f2ff2;
-  width: 220px;
-  border-radius: 20px;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  padding: 1em;
-  cursor: pointer;
+
+/* Centered error box */
+#browser-error {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
 }
-button:hover,
-button:focus {
-  background: #2f70f2;
+.error-window-body {
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  font-size: 13px;
+}
+.error-window-body img {
+  align-self: center;
+  margin-left: 10px;
+  width: 32px;
+  height: 32px;
+}
+
+#chatbox-text {
+  width: calc(100% - 95px);
+}
+#send-button {
+  width: 4%;
+  height: 21px;
+}
+
+.bad-word {
+  color: darkred;
+  font-weight: bold;
+}
+
+#main-window-body {
+  height: calc(100vh - 86px);
 }
