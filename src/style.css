@@ -1,8 +1,15 @@
+body {
+  zoom: 200%; /* Set the zoom level to 300% */
+}
+.bad-word {
+  color: darkred;
+  font-weight: bold;
+}
+
 #transcription-final,
 #chatbox {
   font-size: 11px;
   color: #5e5e5e;
-  max-height: 400px;
   text-align: left;
 }
 #transcription-final p {
@@ -10,7 +17,16 @@
 }
 #transcription-final {
   color: #000;
+  height: calc(100vh / 2 - 146px);
   overflow-y: scroll;
+}
+
+#chatbox-text {
+  width: calc(100% - 95px);
+}
+#send-button {
+  width: 4%;
+  height: 21px;
 }
 
 /* Overlay to gray out everything */
@@ -23,8 +39,6 @@
   background: rgba(100, 100, 100, 0.6);
   z-index: 9998;
 }
-
-/* Centered error box */
 #browser-error {
   position: fixed;
   top: 50%;
@@ -35,29 +49,13 @@
 .error-window-body {
   display: flex;
   gap: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   text-align: center;
   font-size: 13px;
 }
 .error-window-body img {
   align-self: center;
-  margin-left: 10px;
   width: 32px;
   height: 32px;
-}
-
-#chatbox-text {
-  width: calc(100% - 95px);
-}
-#send-button {
-  width: 4%;
-  height: 21px;
-}
-
-.bad-word {
-  color: darkred;
-  font-weight: bold;
-}
-
-#main-window-body {
-  height: calc(100vh - 86px);
 }

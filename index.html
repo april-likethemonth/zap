@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>zap!</title>
-    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    <link rel="stylesheet" href="https://unpkg.com/xp.css@0.2.6/dist/98.css" />
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <div class="window" id="main-window" style="height: calc(100vh - 22px)">
+    <div class="window" id="main-window" style="height: calc(100vh / 2 - 22px)">
       <div class="title-bar">
         <div class="title-bar-text">zap!</div>
         <div class="title-bar-controls">
@@ -17,7 +17,7 @@
           <button aria-label="Close"></button>
         </div>
       </div>
-      <div class="window-body" id="main-window-body">
+      <!-- <div class="window-body" id="main-window-body">
         <menu role="tablist">
           <li role="tab" aria-selected="true"><a href="#tabs">Home</a></li>
           <li role="tab"><a href="/setting">Settings</a></li>
@@ -30,9 +30,31 @@
               <button id="recording-button">Start recording</button>
             </div>
           </div>
-          <div role="tabpanel" aria-hidden="true" id="Settings">
+          <div role="tabpanel" aria-hidden="true" hidden id="Settings">
             <p>meow</p>
           </div>
+        </div>
+      </div> -->
+
+      <div class="tabs window-body" id="main-window-body">
+        <menu role="tablist" aria-label="Sample Tabs">
+          <button role="tab" aria-selected="true" aria-controls="Messages">
+            Messages
+          </button>
+          <button role="tab" aria-controls="Settings">Settings</button>
+        </menu>
+        <!-- the tab content -->
+        <div role="tabpanel" id="Messages">
+          <div class="window-body" id="Home">
+            <div id="transcription-final"></div>
+            <div id="chatbox">
+              <input id="chatbox-text" type="text" />
+              <button id="recording-button">Start recording</button>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" hidden id="Settings">
+          <p>meow</p>
         </div>
       </div>
     </div>
