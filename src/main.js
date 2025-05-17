@@ -3,9 +3,6 @@ import badWords from "./badwords.json" assert { type: "json" };
 window.addEventListener("DOMContentLoaded", () => {
   const recordingButton = document.getElementById("recording-button");
   const transcriptionResult = document.getElementById("transcription-final");
-  const transscriptionInterim = document.getElementById(
-    "transcription-interim"
-  );
 
   let isRecording = false;
 
@@ -77,50 +74,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
     recognition.addEventListener("result", onResult);
     recordingButton.addEventListener("click", onClick);
-  } else {
-    recordingButton.remove();
-    const message = document.getElementById("browser-error");
-    const messageBackground = document.getElementById("browser-error-overlay");
-    message.removeAttribute("hidden");
-    messageBackground.removeAttribute("hidden");
-    message.setAttribute("aria-hidden", "false");
-    messageBackground.setAttribute("aria-hidden", "false");
   }
 });
-
-const tabs = document.querySelectorAll("menu[role=tablist]");
-
-for (let i = 0; i < tabs.length; i++) {
-  const tab = tabs[i];
-
-  const tabButtons = tab.querySelectorAll("menu[role=tablist] > button");
-
-  tabButtons.forEach((btn) =>
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      tabButtons.forEach((button) => {
-        if (
-          button.getAttribute("aria-controls") ===
-          e.target.getAttribute("aria-controls")
-        ) {
-          button.setAttribute("aria-selected", true);
-          openTab(e, tab);
-        } else {
-          button.setAttribute("aria-selected", false);
-        }
-      });
-    })
-  );
-}
-
-function openTab(event, tab) {
-  const articles = tab.parentNode.querySelectorAll('[role="tabpanel"]');
-  articles.forEach((p) => {
-    p.setAttribute("hidden", true);
-  });
-  const article = tab.parentNode.querySelector(
-    `[role="tabpanel"]#${event.target.getAttribute("aria-controls")}`
-  );
-  article.removeAttribute("hidden");
-}
