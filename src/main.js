@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // read in the bad words from the file
   let badWords = [];
-  fetch("./src/badwords.json")
+  fetch("/badwords.json")
     .then((response) => response.json())
     .then((data) => {
       badWords = data;
