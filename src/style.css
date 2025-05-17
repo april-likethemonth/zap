@@ -1,8 +1,10 @@
 body {
   zoom: 200%; /* Set the zoom level to 300% */
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/67/Barbarella_the_Chinese_crested_puppy_%2812929%29.jpg");
+  background-image: url("./background.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  background-position-y: -10vh;
+  /* height: 100vh; */
 }
 body::-webkit-scrollbar {
   display: none;
