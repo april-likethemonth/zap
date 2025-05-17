@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Speech API example</title>
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <h1>Web Speech API example</h1>
+    <p>Click the button and start speaking</p>
+    <button id="recording-button">Start recording</button>
+    <div class="window-body">
+      <p>Hello, world!</p>
+
+      <menu role="tablist">
+        <li role="tab" aria-selected="true"><a href="#tabs">Desktop</a></li>
+        <li role="tab"><a href="#tabs">My computer</a></li>
+        <li role="tab"><a href="#tabs">Control panel</a></li>
+        <li role="tab"><a href="#tabs">Devices manager</a></li>
+        <li role="tab"><a href="#tabs">Hardware profiles</a></li>
+        <li role="tab"><a href="#tabs">Performance</a></li>
+      </menu>
+      <div class="window" role="tabpanel">
+        <div class="window-body">
+          <div id="transcription-final"></div>
+          <div id="transcription-interim"></div>
+        </div>
+      </div>
+    </div>
+    <p id="error-message" hidden aria-hidden="true">
+      your browser isnt supported :cc i know google is evil and bad but try
+      chrome
+    </p>
+    <script src="./src/main.js"></script>
+  </body>
+</html>
