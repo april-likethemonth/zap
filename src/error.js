@@ -16,7 +16,10 @@ window.addEventListener("DOMContentLoaded", () => {
     (typeof winNav.userAgentData === "undefined" ||
       winNav.userAgentData.brands.some((x) => x.brand === "Google Chrome"));
 
-  if (isGoogleChrome) {
+  // Check if the browser is Mobile
+  var isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+  if (isGoogleChrome && !isMobile) {
     // is Google Chrome on IOS
   } else {
     document.getElementById("recording-button").remove();
