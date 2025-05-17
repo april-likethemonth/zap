@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <div class="window" id="main-window" style="height: calc(100vh / 2 - 22px)">
+    <div
+      class="window"
+      id="main-window"
+      style="height: calc(100vh / 2 - 22px); zoom: 2"
+      hidden
+    >
       <div class="title-bar">
         <div class="title-bar-text">zap!</div>
         <div class="title-bar-controls">
@@ -43,7 +48,7 @@
     <div
       id="browser-error"
       class="window"
-      style="width: 300px"
+      style="width: 300px; zoom: 2"
       hidden
       aria-hidden="true"
     >
@@ -66,8 +71,8 @@
     <div id="browser-error-overlay" hidden></div>
 
     <div id="desktop">
-      <div id="zap-icon">
-        <img src="./src/images/lighting.png" alt="zap!" />
+      <div id="zap-icon" class="desktop-icon">
+        <img src="./src/images/lighting.png" alt="zap!" class="selectable" />
         <p>zap!</p>
       </div>
     </div>

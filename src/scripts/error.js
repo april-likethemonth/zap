@@ -1,3 +1,6 @@
+export { hasError };
+let hasError = false;
+
 window.addEventListener("DOMContentLoaded", () => {
   var winNav = window.navigator;
   var vendorName = winNav.vendor;
@@ -19,6 +22,8 @@ window.addEventListener("DOMContentLoaded", () => {
   // Check if the browser is Mobile
   var isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
+  hasError = !(isGoogleChrome && !isMobile);
+  console.log(hasError);
   if (isGoogleChrome && !isMobile) {
     // is Google Chrome on IOS
   } else {

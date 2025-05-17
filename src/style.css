@@ -1,5 +1,5 @@
 body {
-  zoom: 200%; /* Set the zoom level to 300% */
+  /*zoom: 200%;  Set the zoom level to 300% */
   background-image: url("./images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -9,10 +9,50 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
-
-.bad-word {
-  color: darkred;
-  font-weight: bold;
+#desktop {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  padding: 0.5%;
+  gap: 12px;
+}
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  gap: 10px;
+  user-select: none;
+  position: static;
+}
+.desktop-icon:hover {
+  background-color: rgba(102, 180, 211, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.selected {
+  background-color: rgba(102, 180, 211, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px dotted black;
+}
+.desktop-icon img {
+  justify-self: center;
+  height: 45px;
+  width: 45px;
+}
+.desktop-icon p {
+  font-weight: 100;
+  color: black;
+  text-shadow: 1px 1px white;
+  font-size: 16px;
+  margin: 0;
 }
 
 #transcription-final,
@@ -29,7 +69,6 @@ body::-webkit-scrollbar {
   height: calc(100vh / 2 - 146px);
   overflow-y: scroll;
 }
-
 #chatbox {
   display: flex;
   flex-direction: row;
@@ -71,4 +110,9 @@ body::-webkit-scrollbar {
   align-self: center;
   width: 32px;
   height: 32px;
+}
+
+.bad-word {
+  color: darkred;
+  font-weight: bold;
 }
