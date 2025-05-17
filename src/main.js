@@ -1,3 +1,5 @@
+import badWords from "./badwords.json";
+
 window.addEventListener("DOMContentLoaded", () => {
   const recordingButton = document.getElementById("recording-button");
   const transcriptionResult = document.getElementById("transcription-final");
@@ -9,14 +11,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const SpeechRecognition =
     window.SpeechRecognition || window.webkitSpeechRecognition;
-
-  // read in the bad words from the file
-  let badWords = [];
-  fetch("/badwords.json")
-    .then((response) => response.json())
-    .then((data) => {
-      badWords = data;
-    });
 
   if (typeof SpeechRecognition !== "undefined") {
     const recognition = new SpeechRecognition();
