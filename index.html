@@ -12,9 +12,9 @@
       <div class="title-bar">
         <div class="title-bar-text">zap!</div>
         <div class="title-bar-controls">
-          <button aria-label="Minimize" id="minimize-button"></button>
+          <button aria-label="Minimize" class="minimize-button"></button>
           <button aria-label="Maximize"></button>
-          <button aria-label="Close" id="exit-button"></button>
+          <button aria-label="Close" class="exit-button"></button>
         </div>
       </div>
 
@@ -50,13 +50,13 @@
       <div class="title-bar">
         <div class="title-bar-text">Error</div>
         <div class="title-bar-controls">
-          <button aria-label="Minimize"></button>
+          <button aria-label="Minimize" class="minimize-button"></button>
           <button aria-label="Maximize"></button>
-          <button aria-label="Close"></button>
+          <button aria-label="Close" class="exit-button"></button>
         </div>
       </div>
       <div class="error-window-body">
-        <img src="./src/error.png" alt="Error" />
+        <img src="./src/images/error.png" alt="Error" />
         <p>
           your browser isnt supported :cc i know google is evil and bad but try
           <u>desktop</u> chrome
@@ -64,6 +64,13 @@
       </div>
     </div>
     <div id="browser-error-overlay" hidden></div>
+
+    <div id="desktop">
+      <div id="zap-icon">
+        <img src="./src/images/lighting.png" alt="zap!" />
+        <p>zap!</p>
+      </div>
+    </div>
     <script src="./src/index.js" type="module"></script>
   </body>
 </html>

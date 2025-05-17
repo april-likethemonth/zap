@@ -1,4 +1,4 @@
-import "./error.js";
-import "./recording.js";
-import "./tabs.js";
-import "./window.js";
+import "./scripts/error.js";
+import "./scripts/recording.js";
+import "./scripts/tabs.js";
+import "./scripts/window.js";

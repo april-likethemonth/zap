@@ -1,6 +1,6 @@
 body {
   zoom: 200%; /* Set the zoom level to 300% */
-  background-image: url("./background.jpg");
+  background-image: url("./images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: -10vh;
