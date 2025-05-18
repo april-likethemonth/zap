@@ -3,7 +3,7 @@ import { hasError } from "./error";
 
 new DragSelect({
   area: document.getElementById("desktop"),
-  //   selectables: document.getElementsByClassName("selectable"),
+  selectables: document.getElementsByClassName("desktop-icon"),
 });
 
 const icons = document.querySelectorAll(".desktop-icon");
@@ -15,6 +15,12 @@ icons.forEach((icon) => {
     } else {
       e.target.parentElement.classList.toggle("selected");
     }
+    // unselect all other icons
+    icons.forEach((otherIcon) => {
+      if (otherIcon !== e.target && otherIcon !== e.target.parentElement) {
+        otherIcon.classList.remove("selected");
+      }
+    });
   });
   icon.addEventListener("dblclick", (e) => {
     if (hasError) {
@@ -23,4 +29,13 @@ icons.forEach((icon) => {
     }
     document.getElementById("main-window").hidden = false;
   });
+});
+
+// unselect all icons when clicking outside of them
+document.addEventListener("click", (e) => {
+  if (!e.target.classList.contains("desktop-icon")) {
+    icons.forEach((icon) => {
+      icon.classList.remove("selected");
+    });
+  }
 });
