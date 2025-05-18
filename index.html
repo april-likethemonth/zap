@@ -8,11 +8,7 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <div
-      class="window"
-      id="main-window"
-      style="height: calc(100vh / 2 - 22px); zoom: 2"
-    >
+    <div class="window" id="main-window">
       <div class="title-bar">
         <div class="title-bar-text">zap!</div>
         <div class="title-bar-controls">
@@ -28,6 +24,7 @@
             Messages
           </button>
           <button role="tab" aria-controls="Settings">Settings</button>
+          <button role="tab" aria-controls="BadWords">Bad Words</button>
         </menu>
         <!-- the tab content -->
         <div role="tabpanel" id="Messages">
@@ -42,15 +39,22 @@
         <div role="tabpanel" hidden id="Settings">
           <p>meow</p>
         </div>
+        <div role="tabpanel" hidden id="BadWords">
+          <div id="badwordsleftside">
+            <p>Bad Words</p>
+            <textarea id="badwordstext"></textarea>
+            <div id="badwordsbuttons">
+              <a id="export-link">
+                <button id="export-badword">Export</button>
+              </a>
+              <button id="save-badword">Save</button>
+              <button id="reset-badword">Reset</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div
-      id="browser-error"
-      class="window"
-      style="width: 300px; zoom: 2"
-      hidden
-      aria-hidden="true"
-    >
+    <div id="browser-error" class="window" hidden aria-hidden="true">
       <div class="title-bar">
         <div class="title-bar-text">Error</div>
         <div class="title-bar-controls">

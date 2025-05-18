@@ -11,6 +11,10 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+p {
+  margin: 0;
+}
+
 #desktop {
   display: flex;
   position: absolute;
@@ -55,13 +59,19 @@ body::-webkit-scrollbar {
   color: black;
   text-shadow: 1px 1px white;
   font-size: 16px;
-  margin: 0;
 }
 
 #main-window {
+  height: calc(100vh / 2 - 14px);
+  zoom: 2;
   position: relative;
   z-index: 5000;
 }
+
+div[role="tabpanel"] {
+  height: calc(100vh / 2 - 98px);
+}
+
 #transcription-final,
 #chatbox {
   font-size: 11px;
@@ -73,7 +83,7 @@ body::-webkit-scrollbar {
 }
 #transcription-final {
   color: #000;
-  height: calc(100vh / 2 - 146px);
+  height: calc(100vh / 2 - 138px);
   overflow-y: scroll;
 }
 #chatbox {
@@ -88,6 +98,33 @@ body::-webkit-scrollbar {
   min-width: fit-content;
 }
 
+#badwordsleftside {
+  width: 50%;
+  max-height: 100%;
+  height: 100%;
+}
+
+#badwordsleftside p {
+  margin-left: 5px;
+  height: 4%;
+}
+#badwordstext {
+  resize: none;
+  width: 100%;
+  max-height: 90%;
+  height: 100%;
+}
+#badwordsbuttons {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  justify-content: left;
+  height: 5%;
+}
+#badwordsbuttons button,
+#badwordsbuttons a {
+}
+
 /* Overlay to gray out everything */
 #browser-error-overlay {
   position: fixed;
@@ -99,6 +136,8 @@ body::-webkit-scrollbar {
   z-index: 9998;
 }
 #browser-error {
+  width: 300px;
+  zoom: 2;
   position: fixed;
   top: 50%;
   left: 50%;
