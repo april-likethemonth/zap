@@ -4,6 +4,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: -10vh;
+  overflow-y: hidden;
   /* height: 100vh; */
 }
 body::-webkit-scrollbar {
@@ -19,6 +20,7 @@ body::-webkit-scrollbar {
   height: 100vh;
   padding: 0.5%;
   gap: 12px;
+  z-index: 0;
 }
 .desktop-icon {
   display: flex;
@@ -33,12 +35,12 @@ body::-webkit-scrollbar {
 }
 .desktop-icon:hover {
   background-color: rgba(102, 180, 211, 0.3);
-  border-radius: 5px;
+  /* border-radius: 5px; */
   cursor: pointer;
 }
 .selected {
   background-color: rgba(102, 180, 211, 0.3);
-  border-radius: 5px;
+  /* border-radius: 5px; */
   cursor: pointer;
   border: 1px dotted black;
 }
@@ -55,6 +57,10 @@ body::-webkit-scrollbar {
   margin: 0;
 }
 
+#main-window {
+  position: relative;
+  z-index: 5000;
+}
 #transcription-final,
 #chatbox {
   font-size: 11px;
