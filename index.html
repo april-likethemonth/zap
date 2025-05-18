@@ -38,7 +38,101 @@
           </div>
         </div>
         <div role="tabpanel" hidden id="Settings">
-          <p>meow</p>
+          <div class="field-row-stacked">
+            <div class="tooltip">
+              <label for="username">Username</label>
+              <span class="tooltiptext">
+                Username you use to log into <b>PiShock.com</b>. Can be found in
+                the <b>Account</b> section of the website. <br /><br />
+                (Example: puppy73)
+              </span>
+            </div>
+            <input type="text" id="username" />
+          </div>
+          <div class="field-row-stacked">
+            <div class="tooltip">
+              <label for="apikey">API Key</label>
+              <span class="tooltiptext">
+                API Key generated on <b>PiShock.com</b> Can be found in the
+                <b>Account</b> section of the website. <br /><br />
+                (Example: 5c678926-d19e-4f86-42ad-21f5a76126db)
+              </span>
+            </div>
+            <input type="text" id="apikey" />
+          </div>
+          <div class="field-row-stacked">
+            <div class="tooltip">
+              <label for="code">Code</label>
+              <span class="tooltiptext">
+                Sharecode generated on <b>PiShock.com</b>.
+                <i>Limitations can be set when generating the code.</i>
+                <br /><br />
+                (Example: 17519CD8GAP)
+              </span>
+            </div>
+            <input type="text" id="code" />
+          </div>
+          <div class="field-row-stacked">
+            <div class="tooltip">
+              <label for="name">Name</label>
+              <span class="tooltiptext">
+                Name of what sent the commands. This will showup in the PiShock
+                logs on the website. <br /><br />
+                (Example: TG_Bot_Script)
+              </span>
+            </div>
+            <input type="text" id="name" />
+          </div>
+          <hr />
+          <section id="bottom-settings">
+            <div id="punishment-type">
+              <div class="field-row">Punishment Type:</div>
+              <div class="field-row">
+                <input type="radio" id="shock" />
+                <label for="shock">Shock</label>
+              </div>
+              <div class="field-row">
+                <input type="radio" id="vibrate" />
+                <label for="vibrate">Vibrate</label>
+              </div>
+              <div class="field-row">
+                <input type="radio" id="beep" />
+                <label for="beep">Beep</label>
+              </div>
+            </div>
+            <div id="sliders">
+              <div id="shock-intensity" class="field-row">
+                <label for="shock-intensity-range">Shock Intensity</label>
+                <div class="slider-container">
+                  <div class="slider-number">1</div>
+                  <input
+                    type="range"
+                    id="shock-intensity-range"
+                    min="1"
+                    max="100"
+                    value="1"
+                  />
+                  <div class="slider-number">100</div>
+                </div>
+                <div id="shock-intensity-value">1</div>
+              </div>
+              <div id="shock-duration" class="field-row">
+                <label for="shock-duration-range">Duration</label>
+                <div class="slider-container">
+                  <div class="slider-number">1</div>
+                  <input
+                    type="range"
+                    id="shock-duration-range"
+                    min="1"
+                    max="15"
+                    value="2"
+                  />
+                  <div class="slider-number">100</div>
+                </div>
+                <div id="shock-duration-value">2</div>
+              </div>
+            </div>
+          </section>
         </div>
         <div role="tabpanel" hidden id="BadWords">
           <div id="badwordsleftside">
