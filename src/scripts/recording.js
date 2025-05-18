@@ -8,11 +8,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   let isRecording = false;
 
-  const SpeechRecognition =
+  let SpeechRecognition =
     window.SpeechRecognition || window.webkitSpeechRecognition;
 
   if (typeof SpeechRecognition !== "undefined") {
-    const recognition = new SpeechRecognition();
+    let recognition = new SpeechRecognition();
     recognition.continuous = true;
     recognition.interimResults = true;
 
@@ -64,7 +64,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const onClick = (event) => {
       if (isRecording) {
-        recognition.stop();
+        recognition.abort();
         recordingButton.textContent = "Start recording";
       } else {
         recognition.start();
@@ -76,5 +76,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
     recognition.addEventListener("result", onResult);
     recordingButton.addEventListener("click", onClick);
+    recognition.addEventListener("speechend", async () => {
+      if (isRecording) {
+        console.log("speechend");
+        // restart recognition
+        recognition.stop();
+        setTimeout(() => {
+          recognition.start();
+        }, 1);
+      }
+    });
   }
 });
