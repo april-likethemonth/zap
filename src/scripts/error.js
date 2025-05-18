@@ -23,10 +23,13 @@ window.addEventListener("DOMContentLoaded", () => {
   var isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
   hasError = !(isGoogleChrome && !isMobile);
-  console.log(hasError);
-  if (isGoogleChrome && !isMobile) {
-    // is Google Chrome on IOS
-  } else {
+  if (isMobile) {
+    // Set zoom to 1.0
+    document.getElementById("main-window").style.zoom = 1.0;
+    document.getElementById("browser-error").style.zoom = 1.0;
+  }
+  if (hasError) {
+    // Show the error message
     document.getElementById("recording-button").remove();
     const message = document.getElementById("browser-error");
     const messageBackground = document.getElementById("browser-error-overlay");
