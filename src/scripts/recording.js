@@ -80,9 +80,11 @@ window.addEventListener("DOMContentLoaded", () => {
       if (isRecording) {
         console.log("speechend");
         // restart recognition
-        recognition.stop();
+        recognition.abort();
+
         setTimeout(() => {
           recognition.start();
+          console.log("restart recognition");
         }, 1);
       }
     });
