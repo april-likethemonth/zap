@@ -23,11 +23,17 @@ icons.forEach((icon) => {
     });
   });
   icon.addEventListener("dblclick", (e) => {
-    if (hasError) {
-      document.getElementById("browser-error").hidden = false;
-      document.getElementById("browser-error-overlay").hidden = false;
+    if (icon.id === "zap-icon") {
+      if (hasError) {
+        document.getElementById("browser-error").hidden = false;
+        document.getElementById("browser-error-overlay").hidden = false;
+      }
+      document.getElementById("main-window").hidden = false;
+    } else if (icon.id === "github-icon") {
+      window
+        .open("https://github.com/april-likethemonth/zap", "_blank")
+        .focus();
     }
-    document.getElementById("main-window").hidden = false;
   });
 });
 
