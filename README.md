@@ -1,1 +1,1 @@
-zaps u where u swear :3
+zaps u when u swear :3
