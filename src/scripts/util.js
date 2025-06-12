@@ -1,5 +1,3 @@
-import { main } from "../../test.js";
-
 export function getCookie(name) {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
