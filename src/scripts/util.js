@@ -36,6 +36,7 @@ export async function apiCall(
 
   const url = "https://do.pishock.com/api/apioperate/";
   const headers = {
+    "Access-Control-Allow-Origin": "*",
     "Content-Type": "application/json",
   };
   const options = {
