@@ -1,4 +1,5 @@
 import { badWordsRaw } from "./badwords.js";
+import { apiCallWithSettings } from "./settings.js";
 const badWords = badWordsRaw.split(",");
 console.log("badWords: ", badWords);
 
@@ -16,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
     recognition.continuous = true;
     recognition.interimResults = true;
 
-    const onResult = (event) => {
+    const onResult = async (event) => {
       const result = event.results[event.results.length - 1];
       const result2 = event.results[event.results.length - 2];
       if (result.isFinal) {
@@ -29,6 +30,9 @@ window.addEventListener("DOMContentLoaded", () => {
             span.classList.add("bad-word");
             span.textContent = transcript[i];
             transcript[i] = span.outerHTML;
+
+            // Send punishment
+            await apiCallWithSettings();
           }
         }
         // Join the transcript back together
